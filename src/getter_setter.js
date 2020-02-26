@@ -1,5 +1,5 @@
 //Getter,Setter함수
-
+//Getter : 특정 값을 조회, Setter : 특정 값을 설정.
 const numbers1 = {
   a: 1,
   b: 2,
