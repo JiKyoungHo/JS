@@ -55,7 +55,6 @@ numbers.a = 5;
 // 그리고 this.cal()이 실행 된다. => 계산출력, sum값 업데이트
 console.log(numbers.sum); // 값이 바뀔때만 계산 실행
 console.log(numbers.sum);
-console.log(numbers.sum);
 
 //----조회할때 마다 계산 실행 되게 하려면
 /*
