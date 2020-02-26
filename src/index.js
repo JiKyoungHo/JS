@@ -1,81 +1,74 @@
-const ironMan = {
-  name: "토니",
-  actor: "주니어",
-  alias: "아이언맨"
-};
+//Getter,Setter함수
 
-const man = {
-  name: "로저스",
-  actor: "에반스",
-  alias: "아메리카"
-};
-
-console.log(man);
-
-function print(hero) {
-  const { alias, name, actor } = hero;
-  const text = `${alias}(${name})역할을 맡은 배우는 ${actor}`;
-
-  console.log(text);
-}
-
-print(ironMan);
-print(man);
-
-const JKH = {
-  name: "지경호",
-  phone: "01098114418",
-  age: 2,
-  height: 171,
-  weight: 80,
-  address: "seoul",
-  sound: "왈왈",
-  say: function say() {
-    console.log(this.sound);
+const numbers1 = {
+  a: 1,
+  b: 2,
+  get sum() {
+    console.log("sum함수 실행");
+    return this.a + this.b;
   }
 };
-JKH.say();
 
-function print1(human) {
-  const text = `${human.name}의 전화번호는 ${human.phone}이고 나이 ${
-    human.age
-  }`;
-
-  console.log(text);
-}
-print1(JKH);
-
-function print2(human) {
-  const { name, phone, age } = human;
-  const text = `${name}의 전화번호는 ${phone} 나이는${age}`;
-  console.log(text);
-}
-print2(JKH);
-
-function print3({ name, age, phone }) {
-  const text = `${name}의 전화번호는 ${phone} 나이는 ${age}`;
-  console.log(text);
-}
-print3(JKH);
-
-const { name } = JKH;
-console.log(name);
+console.log(numbers1.sum);
+numbers1.b = 5; //값 변환
+console.log(numbers1.sum);
+//특정 값을 조회하려고 할 때 getter 실행
 
 const dog = {
-  name: "멍멍이",
-  sound: "멍멍",
-  say: function() {
-    console.log(this.sound);
+  myname: "멍멍이",
+  set name(value) {
+    console.log("이름 바꾸기" + value);
+    this.myname = value;
+  }
+};
+console.log(dog.myname);
+dog.name = "망망이";
+console.log(dog.myname);
+
+const numbers = {
+  _a: 1,
+  _b: 2,
+  sum: 3,
+  cal() {
+    console.log("계산");
+    this.sum = this._a + this._b;
+  },
+  get a() {
+    return this._a;
+  },
+  get b() {
+    return this._b;
+  },
+  set a(value) {
+    this._a = value;
+    this.cal();
+  },
+  set b(value) {
+    this._b = value;
+    this.cal();
   }
 };
 
-const cat = {
-  name: "야옹이",
-  sound: "야옹"
+console.log(numbers.sum);
+numbers.a = 5;
+// setter 함수의 value가 this._a가 가지게 되고 _a가 설정이된다
+// 그리고 this.cal()이 실행 된다. => 계산출력, sum값 업데이트
+console.log(numbers.sum); // 값이 바뀔때만 계산 실행
+console.log(numbers.sum);
+
+//----조회할때 마다 계산 실행 되게 하려면
+/*
+const numbers = {
+  a : 1,
+  b : 2,
+  get sum() {
+    console.log('계산');
+    return this.a + this.b;
+  }
 };
 
-cat.say = dog.say;
-dog.say();
-cat.say();
-//dog.say에서 가르키던 this.sound가 cat 객체에 들어가면서
-//this.sound는 cat.sound를 가르키게 되어 야옹출력
+console.log(numbers.sum);
+numbers.a = 5; 
+console.log(numbers.sum);
+console.log(numbers.sum);
+console.log(numbers.sum);*/
