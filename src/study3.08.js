@@ -39,7 +39,7 @@ function getSound1(animal) {
   return sounds[animal] || "??";
 }
 //객체 활용 객체의 원소 값을 비교 할때 객체[]
-console.log(getSound1("."));
+console.log(getSound1("구구"));
 
 function sound2(animal) {
   const sounds = {
