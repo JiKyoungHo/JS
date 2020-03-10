@@ -36,12 +36,17 @@ const getCat = async () => {
 //모두 시작 모두 끝나면 반환값은 각각 반환값이 resul에 들어가 있다.
 
 async function process() {
-  const [dog, bird, cat] = await Promise.all([getDog(), getBird(), getCat()]);
-  console.log(dog);
-  console.log(bird);
-  console.log(cat);
+  try {
+    const [dog, bird, cat] = await Promise.all([getDog(), getBird(), getCat()]);
+    console.log(dog);
+    console.log(bird);
+    console.log(cat);
+  } catch (e) {
+    console.log(e);
+  }
   //각각 꺼내고 싶을때는 배열비구조화할당을 해주면 된다..
   //걸린시간 3초
+  //저 배열 중 하나가 에러가 발생하면 다음으로 못넘어감
 }
 
 process();
