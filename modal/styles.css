@@ -1,0 +1,27 @@
+body {
+  font-family: sans-serif;
+}
+
+.modal-wrapper {
+position: fixed;
+top : 0;
+left: 0;
+width: 100px;;
+height: 100px;
+background-color: orange;
+display: flex;
+align-items: center;
+justify-content: center;
+/* 가운데 정렬 */
+}
+.modal {
+  background: white;
+  padding: 24,16;
+  border-radius: 4;
+  width: 320;
+}
+
+.close-wrapper {
+  text-align: right;
+  
+}
