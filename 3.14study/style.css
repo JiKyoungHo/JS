@@ -87,3 +87,16 @@ span {
   border: 2px dashed black;
   position: relative;
 }
+.section {
+  height : 200px;
+  border : 4px dashed blue;
+}
+.section h1 {
+  text-align : center;
+  line-height:1;
+  font-weight : bold;
+  position : sticky;
+  top : 0;
+ }
+/*
+타이틀이 화면 위에 스크롤할때마다 따라오면서 사라짐. */\
