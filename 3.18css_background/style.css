@@ -1,0 +1,65 @@
+.box-group {
+  display: flex;
+}
+.box-group .box {
+  width: 100px;
+  height: 100px;
+  background: tomato;
+  border: 4px dashed red;
+  border-radius: 10px;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: -30px;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+}
+.box-group .box:nth-child(2n) {
+  margin-top: 30px;
+}
+.box1 {
+  position: relative;
+  z-index: 0;
+}
+.box2 {
+}
+.box3 {
+  position: relative;
+  z-index: 1;
+}
+.box4 {
+  position: relative;
+  z-index: 0;
+  /*   기본 값은 0이고 포지션이 있을 때만 사용가능 다른 클라스에도 포지션 있으면 숫자가 큰거 , html 에서 작성된 숫자 순 */
+}
+.box5 {
+}
+.img {
+  background-image: url("https://heropy.blog/css/images/vendor_icons/typescript.png");
+  background-repeat: no-repeat;
+  background-size: 100px;
+  /* background-repeat : repeat-y; */
+  background-position: 100px 50px;
+  width: 500px;
+  height: 500px;
+  border: 2px dashed blue;
+  border-radius: 20px;
+}
+
+/* 스크롤 : overflow: scroll,auto; */
+.img2 {
+  background-image: url("https://heropy.blog/css/images/vendor_icons/typescript.png");
+  /*   background-repeat : no-repeat;  */
+  background-position: 100px 50px;
+  width: 600px;
+  height: 500px;
+  border: 2px dashed blue;
+  border-radius: 20px;
+  overflow: auto;
+  background-attachment: local;
+  /*   local 시 출력 고정 이미지가 아닌 다 보여줌 */
+  /*   fixed 화면 위치에 고정 되어 페이지가 스크롤 되어도 그 사진은 위치에 그대로 위치하여 보여진다. scroll 은 웹페이지 내림시 내려감*/
+}
+.imgscroll {
+  height: 2000px;
+}
